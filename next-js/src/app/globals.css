@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JetBrains Mono Variable Font */
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  src: url('/fonts/jetbrains_mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  src: url('/fonts/jetbrains_mono/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cardo Font */
+@font-face {
+  font-family: 'Cardo';
+  src: url('/fonts/cardo/Cardo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cardo';
+  src: url('/fonts/cardo/Cardo-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cardo';
+  src: url('/fonts/cardo/Cardo-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Calling Code Font */
+@font-face {
+  font-family: 'Calling Code';
+  src: url('/fonts/calling_code/CallingCode-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Using hex codes for colors - black/white with purple accent */
+  --foreground: #21201f; /* Very dark grey almost black */
+  --background: #f9f6f2; /* Almost white */
+  --primary: #21201f; /* Very dark grey */
+  --secondary: #FFFFFF; /* Pure white */
+  --accent: #68ac81; /* More purple-leaning indigo */
+  --terminal-accent: #c9c2ff; /* More purple-leaning indigo */
+  --brown: #8B5E3C; /* Rich wood brown (maintained for backward compatibility) */
+  --purple: #7B68EE; /* Medium slate blue */
+  --orange: #E07A55; /* Darker orange */
+  --green: #5EA36B; /* Darker green */
+  --terminal-green: #3B9A4B; /* Darker terminal green */
+  
+  /* Keep RGB format for opacity support */
+  --foreground-rgb: 33, 33, 33; /* Very dark grey */
+  --background-rgb: 250, 250, 250; /* Almost white */
+  --primary-rgb: 33, 33, 33; /* Very dark grey */
+  --secondary-rgb: 255, 255, 255; /* Pure white */
+  --accent-rgb: 108, 92, 231; /* Purple-leaning indigo */
+  --brown-rgb: 139, 94, 60; /* Same rich wood brown */
+  --purple-rgb: 123, 104, 238; /* Medium slate blue */
+  --orange-rgb: 224, 122, 85; /* Darker orange */
+  --green-rgb: 94, 163, 107; /* Darker green */
+  --terminal-green-rgb: 59, 154, 75; /* Darker terminal green */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.025em;
+  background-image: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.01), transparent); /* Very subtle gradient with accent color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Retro terminal effect */
+.terminal-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--background);
+}
+
+.terminal-text-secondary {
+  color: var(--secondary);
+}
+
+.terminal-text-orange {
+  color: var(--orange);
+}
+
+.terminal-text-green {
+  color: var(--terminal-green);
+}
+
+.terminal-text-accent  {
+  color: var(--terminal-accent);
+}
+
+.terminal-cursor::after {
+  content: ' █';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom scrollbar for browser content */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(var(--background-rgb), 0.8);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-rgb), 0.2);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--accent-rgb), 0.3);
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-rgb), 0.2) rgba(var(--background-rgb), 0.8);
+}
+
+/* Common components */
+.container-custom {
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+}
+
+.heading-xl {
+  font-family: 'Cardo', sans-serif;
+  font-weight: bold; /* Medium weight */
+  font-size: 3.75rem; /* text-4xl */
+  line-height: 3.5rem;
+  color: var(--primary); 
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .heading-xl {
+    font-size: 5rem; /* md:text-5xl */
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-xl {
+    font-size: 6rem; /* lg:text-6xl */
+    line-height: 1;
+  }
+}
+
+.heading-lg {
+  font-family: 'Cardo', serif;
+  font-weight: bold; /* Medium weight */
+  font-size: 2.75rem; /* text-3xl */
+  line-height: 3rem;
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .heading-lg {
+    font-size: 3.25rem; /* md:text-4xl */
+    line-height: 1;
+  }
+}
+
+.heading-md {
+  font-family: 'Cardo', serif;
+  font-weight: bold; /* Medium weight */
+  font-size: 2.25rem; /* text-2xl */
+  line-height: 2rem;
+  color: var(--primary);
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .heading-md {
+    font-size: 2.5rem; /* md:text-3xl */
+    line-height: 2.25rem;
+  }
+}
+
+.heading-sm {
+  font-family: 'Cardo', serif;
+  font-weight: bold; /* Medium weight */
+  font-size: 1.5rem; /* text-xl */
+  line-height: 1.75rem;
+  color: var(--primary);
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .heading-sm {
+    font-size: 1.75rem; /* md:text-2xl */
+    line-height: 2rem;
+  }
+}
+
+.paragraph {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem; /* text-base */
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    font-size: 1.125rem; /* md:text-lg */
+    line-height: 1.75rem;
+  }
+}
+
+.paragraph-serif {
+  font-family: 'Cardo', 'Times New Roman', serif;
+  font-size: 1rem; /* text-base */
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .paragraph-serif {
+    font-size: 1.125rem; /* md:text-lg */
+    line-height: 1.75rem;
+  }
+}
+
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--secondary);
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 12px;
+  font-weight: 500; /* font-medium */
+  font-family: 'JetBrains Mono', monospace;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(var(--accent-rgb), 0.2);
+}
+
+.btn-primary:hover {
+  color: var(--secondary);
+  background-color: color-mix(in srgb, var(--accent) 70%, #4834d4 30%); /* Slightly darker purple */
+  border: 1px solid var(--accent);
+  box-shadow: 0 4px 8px rgba(var(--accent-rgb), 0.3);
+}
+
+.btn-primary:focus {
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  --tw-ring-offset-width: 2px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent);
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 12px;
+  font-weight: 500; /* font-medium */
+  font-family: 'JetBrains Mono', monospace;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border: 1px solid var(--accent);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  --tw-ring-offset-width: 2px;
+}
+
+/* Retro border - for buttons (capsule shape) */
+.retro-border {
+  position: relative;
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px 0 0 var(--accent);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--secondary);
+}
+
+/* Retro border for rectangular content */
+.retro-border-rect {
+  position: relative;
+  border: 1px solid var(--accent);
+  box-shadow: 4px 4px 0 0 var(--accent);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--secondary);
+}
+
+/* Card hover effect */
+.card {
+  position: relative;
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.1);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), color-mix(in srgb, var(--accent) 50%, var(--purple) 50%));
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Center scroll hint */
+.scroll-hint {
+  display: none; /* Hide the scroll hint */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Important UI elements with sage green accent */
+.accent-element {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.accent-element:hover {
+  background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* Update the corner accents for PlaceholderImage */
+.corner-accent {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--secondary);
+  z-index: 10;
+}
+
+/* Parallax scrolling effect */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: translateZ(-10px) scale(2);
+  z-index: -1;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.parallax-content {
+  transform: translateZ(0);
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+}
+
+/* Custom hover class for PlaceholderImage */
+.hovered .retro-border-rect {
+  border-color: var(--accent);
+  transition: border-color 0.3s ease;
+}
+
+/* Card flip animation utility classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

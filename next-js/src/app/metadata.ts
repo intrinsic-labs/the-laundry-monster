@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'The Laundry Monster | Elaine Pope',
+  title: 'The Overdone Effect | Elaine Pope',
   description: 'Thoughts with Elaine.',
 }; 

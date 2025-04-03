@@ -215,7 +215,7 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
                 <FaXTwitter />
               </a>
               <a 
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&hashtag=%23thelaundrymonster`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&hashtag=%23theoverdoneeffect`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/10 text-primary hover:bg-accent hover:text-secondary transition-colors duration-300"

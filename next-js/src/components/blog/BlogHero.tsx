@@ -29,7 +29,7 @@ const BlogHero = () => {
   }, []);
 
   // Default content if nothing is in the CMS yet
-  const title = heroData?.title || "The Laundry Monster";
+  const title = heroData?.title || "The Overdone Effect";
   const description = heroData?.description || 
     "Thoughts with Elaine.";
 

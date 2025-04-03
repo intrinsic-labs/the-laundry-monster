@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'The Laundry Monster | Elaine Pope',
+  title: 'The Overdone Effect | Elaine Pope',
   description: 'Thoughts with Elaine.',
 }; 
 

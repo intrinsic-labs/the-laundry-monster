@@ -47,7 +47,7 @@ const BlogPostHeader = ({ post }: BlogPostHeaderProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap items-center gap-5 mb-10 justify-center"
+            className="flex flex-wrap items-center gap-2 md:gap-5 mb-10 justify-center"
           >
             <div className="text-sm text-neutral-800">
               {post.author.name}

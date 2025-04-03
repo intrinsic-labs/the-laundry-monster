@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getBlogPost(slug);
   
   return {
-    title: `${post.title} | The Laundry Monster`,
+    title: `${post.title} | The Overdone Effect`,
     description: post.excerpt,
     openGraph: {
       title: post.title,

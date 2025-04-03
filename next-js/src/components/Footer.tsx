@@ -33,7 +33,7 @@ const Footer = () => {
               className="mb-6"
             /> */}
             <div className="logo-text text-2xl mb-4 text-secondary">
-              The Laundy Monster
+              The Overdone Effect
             </div>
             <div className="logo-text text-md mb-4 text-secondary">
               A Blog by Elaine Pope

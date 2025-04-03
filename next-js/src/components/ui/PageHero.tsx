@@ -40,7 +40,7 @@ const PageHero: React.FC<PageHeroProps> = ({
           transition={{ duration: 0.3, delay: 0.1 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight mb-8">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8">
             {titleParts}
           </h1>
         </motion.div>

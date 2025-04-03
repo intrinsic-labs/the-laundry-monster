@@ -81,7 +81,7 @@ const FeaturedPost = () => {
               <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-12 z-20">
                 <div className="max-w-3xl">
                   <div className="flex items-center space-x-1 mb-3 text-sm font-light text-secondary/60 group-hover:text-orange transition-colors duration-300">
-                    <span>Featured Paper</span>
+                    <span>Featured Post</span>
                     <span className="text-secondary/40">|</span>
                     <span>{featuredPost.readingTime}</span>
                   </div>

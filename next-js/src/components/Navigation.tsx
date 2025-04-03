@@ -94,7 +94,7 @@ const Navigation = () => {
                   transition={{ duration: 0.2 }}
                   className="flex items-center"
                 >
-                  EGP
+                  EP
                 </motion.span>
               ) : (
                 <motion.span

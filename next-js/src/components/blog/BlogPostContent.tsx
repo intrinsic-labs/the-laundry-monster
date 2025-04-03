@@ -192,7 +192,7 @@ const BlogPostContent = ({ post }: BlogPostContentProps) => {
               {post.tags.map((tag, index) => (
                 <Link 
                   key={index} 
-                  href={`/blog?tag=${encodeURIComponent(tag)}`}
+                  href={`/?tag=${encodeURIComponent(tag)}`}
                   className="font-calling-code text-sm px-3 py-1 rounded-full bg-primary/10 text-primary hover:bg-orange hover:text-secondary transition-colors duration-300"
                 >
                   {tag}

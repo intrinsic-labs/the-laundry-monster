@@ -1,10 +1,9 @@
-# Latent Spaces
-A Loom Interface
+# The Laundry Monster
+A blog by Elaine Pope
 
 ## Stack
 - NextJS 15.2.4
 - Tailwind CSS 13.4.17
 - Sanity CMS (for blog posts)
-- Supabase (for tracking fundrasing transactions)
-- Stripe (for processing payments)
+- Formspree for forms
 - Vercel (for hosting)
